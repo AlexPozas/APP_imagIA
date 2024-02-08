@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ullada"
+        android:title="Ullada" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/historial"
+        android:title="Historial    " />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/compte"
+        android:title="Compte" />
+
+
+</menu>
