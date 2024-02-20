@@ -13,5 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "imageAI"
+rootProject.name = "ImageAI"
 include(":app")
+ 

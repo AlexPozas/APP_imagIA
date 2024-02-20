@@ -9,12 +9,11 @@
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/historial"
-        android:title="Historial    " />
+        android:title="Historial" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/compte"
-        android:title="Compte" />
-
+        android:title="Comptes" />
 
 </menu>
