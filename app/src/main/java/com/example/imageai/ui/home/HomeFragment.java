@@ -1,5 +1,7 @@
 package com.example.imageai.ui.home;
 
+import static com.example.imageai.LoginActivity.nom;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -58,7 +60,6 @@ public class HomeFragment extends Fragment {
     private long lastClickTime = 0; // Variable para almacenar el tiempo del último clic
     private PreviewView previewView;
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
-    private TextView textView;
     private static ImageCapture imageCapture;
     private String url = "https://ams27.ieti.site/data";
     TextToSpeech t1;
@@ -112,10 +113,12 @@ public class HomeFragment extends Fragment {
                                                 rotateImage90Degrees(photoFile);
                                                 compressImage(photoFile.getAbsolutePath());
                                                 String base64image=imageToBase64(photoFile.getAbsolutePath());
-                                                String json = "{\"data\": {\"type\": \"image\", \"prompt\": \"Que hay en imagen?\", \"image\": [\"" + base64image + "\"]}}";
+
+                                                String json = "{\"data\": {\"type\": \"image\", \"prompt\": \"Que hay en imagen?\", \"image\": [\"" + base64image + "\"], \"user\": \""+nom.getText()+"\"}}";
+                                                System.out.println(json);
                                                 sendHttpPostRequest(url, json);
                                                // Toast.makeText(requireContext(), "Foto guardada en " + photoFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
-                                                Toast.makeText(requireContext(), "Foto enviado", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(requireContext(), "Foto enviado", Toast.LENGTH_SHORT).show();
                                             }
                                         });
                                     }
